@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CoverView">
+        <attr name="horizontalPadding"  format="dimension"/>
+        <attr name="verticalPadding"    format="dimension"/>
+        <attr name="backgroundColor"    format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="RectView">
+        <attr name="x1"             format="integer"/>
+        <attr name="y1"             format="integer"/>
+        <attr name="x2"             format="integer"/>
+        <attr name="y2"             format="integer"/>
+        <attr name="confidence"     format="float"/>
+        <attr name="color"          format="color"/>
+        <attr name="textSize"       format="dimension"/>
+        <attr name="textPadding"    format="dimension"/>
+        <attr name="radius"         format="dimension" />
+        <attr name="lineLength"     format="dimension" />
+    </declare-styleable>
+
+</resources>

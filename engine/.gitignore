@@ -1,0 +1,6 @@
+/build
+/distribution
+/.cxx
+/libs
+/src/androidTest
+/src/test

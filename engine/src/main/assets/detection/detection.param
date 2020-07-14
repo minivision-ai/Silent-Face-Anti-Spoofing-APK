@@ -1,0 +1,236 @@
+7767517
+234 255
+Input            data             0 1 data 0=60 1=60 2=3
+Split            splitncnn_0      1 4 data data_splitncnn_0 data_splitncnn_1 data_splitncnn_2 data_splitncnn_3
+Convolution      conv1            1 1 data_splitncnn_3 conv_blob1 0=8 1=3 2=1 3=2 4=1 5=0 6=216
+BatchNorm        batch_norm1      1 1 conv_blob1 batch_norm_blob1 0=8
+Scale            bn_scale1        1 1 batch_norm_blob1 batch_norm_blob1_bn_scale1 0=8 1=1
+ReLU             relu1            1 1 batch_norm_blob1_bn_scale1 relu_blob1
+ConvolutionDepthWise conv2            1 1 relu_blob1 conv_blob2 0=8 1=3 2=1 3=1 4=1 5=0 6=72 7=8
+BatchNorm        batch_norm2      1 1 conv_blob2 batch_norm_blob2 0=8
+Scale            bn_scale2        1 1 batch_norm_blob2 batch_norm_blob2_bn_scale2 0=8 1=1
+ReLU             relu2            1 1 batch_norm_blob2_bn_scale2 relu_blob2
+Convolution      conv3            1 1 relu_blob2 conv_blob3 0=16 1=1 2=1 3=1 4=0 5=0 6=128
+BatchNorm        batch_norm3      1 1 conv_blob3 batch_norm_blob3 0=16
+Scale            bn_scale3        1 1 batch_norm_blob3 batch_norm_blob3_bn_scale3 0=16 1=1
+ReLU             relu3            1 1 batch_norm_blob3_bn_scale3 relu_blob3
+ConvolutionDepthWise conv4            1 1 relu_blob3 conv_blob4 0=16 1=3 2=1 3=2 4=1 5=0 6=144 7=16
+BatchNorm        batch_norm4      1 1 conv_blob4 batch_norm_blob4 0=16
+Scale            bn_scale4        1 1 batch_norm_blob4 batch_norm_blob4_bn_scale4 0=16 1=1
+ReLU             relu4            1 1 batch_norm_blob4_bn_scale4 relu_blob4
+Convolution      conv5            1 1 relu_blob4 conv_blob5 0=32 1=1 2=1 3=1 4=0 5=0 6=512
+BatchNorm        batch_norm5      1 1 conv_blob5 batch_norm_blob5 0=32
+Scale            bn_scale5        1 1 batch_norm_blob5 batch_norm_blob5_bn_scale5 0=32 1=1
+ReLU             relu5            1 1 batch_norm_blob5_bn_scale5 relu_blob5
+ConvolutionDepthWise conv6            1 1 relu_blob5 conv_blob6 0=32 1=3 2=1 3=1 4=1 5=0 6=288 7=32
+BatchNorm        batch_norm6      1 1 conv_blob6 batch_norm_blob6 0=32
+Scale            bn_scale6        1 1 batch_norm_blob6 batch_norm_blob6_bn_scale6 0=32 1=1
+ReLU             relu6            1 1 batch_norm_blob6_bn_scale6 relu_blob6
+Convolution      conv7            1 1 relu_blob6 conv_blob7 0=32 1=1 2=1 3=1 4=0 5=0 6=1024
+BatchNorm        batch_norm7      1 1 conv_blob7 batch_norm_blob7 0=32
+Scale            bn_scale7        1 1 batch_norm_blob7 batch_norm_blob7_bn_scale7 0=32 1=1
+ReLU             relu7            1 1 batch_norm_blob7_bn_scale7 relu_blob7
+ConvolutionDepthWise conv8            1 1 relu_blob7 conv_blob8 0=32 1=3 2=1 3=2 4=1 5=0 6=288 7=32
+BatchNorm        batch_norm8      1 1 conv_blob8 batch_norm_blob8 0=32
+Scale            bn_scale8        1 1 batch_norm_blob8 batch_norm_blob8_bn_scale8 0=32 1=1
+ReLU             relu8            1 1 batch_norm_blob8_bn_scale8 relu_blob8
+Convolution      conv9            1 1 relu_blob8 conv_blob9 0=64 1=1 2=1 3=1 4=0 5=0 6=2048
+BatchNorm        batch_norm9      1 1 conv_blob9 batch_norm_blob9 0=64
+Scale            bn_scale9        1 1 batch_norm_blob9 batch_norm_blob9_bn_scale9 0=64 1=1
+ReLU             relu9            1 1 batch_norm_blob9_bn_scale9 relu_blob9
+ConvolutionDepthWise conv10           1 1 relu_blob9 conv_blob10 0=64 1=3 2=1 3=1 4=1 5=0 6=576 7=64
+BatchNorm        batch_norm10     1 1 conv_blob10 batch_norm_blob10 0=64
+Scale            bn_scale10       1 1 batch_norm_blob10 batch_norm_blob10_bn_scale10 0=64 1=1
+ReLU             relu10           1 1 batch_norm_blob10_bn_scale10 relu_blob10
+Convolution      conv11           1 1 relu_blob10 conv_blob11 0=64 1=1 2=1 3=1 4=0 5=0 6=4096
+BatchNorm        batch_norm11     1 1 conv_blob11 batch_norm_blob11 0=64
+Scale            bn_scale11       1 1 batch_norm_blob11 batch_norm_blob11_bn_scale11 0=64 1=1
+ReLU             relu11           1 1 batch_norm_blob11_bn_scale11 relu_blob11
+Split            splitncnn_1      1 2 relu_blob11 relu_blob11_splitncnn_0 relu_blob11_splitncnn_1
+ConvolutionDepthWise conv12           1 1 relu_blob11_splitncnn_1 conv_blob12 0=64 1=3 2=1 3=2 4=1 5=0 6=576 7=64
+BatchNorm        batch_norm12     1 1 conv_blob12 batch_norm_blob12 0=64
+Scale            bn_scale12       1 1 batch_norm_blob12 batch_norm_blob12_bn_scale12 0=64 1=1
+ReLU             relu12           1 1 batch_norm_blob12_bn_scale12 relu_blob12
+Convolution      conv13           1 1 relu_blob12 conv_blob13 0=128 1=1 2=1 3=1 4=0 5=0 6=8192
+BatchNorm        batch_norm13     1 1 conv_blob13 batch_norm_blob13 0=128
+Scale            bn_scale13       1 1 batch_norm_blob13 batch_norm_blob13_bn_scale13 0=128 1=1
+ReLU             relu13           1 1 batch_norm_blob13_bn_scale13 relu_blob13
+ConvolutionDepthWise conv14           1 1 relu_blob13 conv_blob14 0=128 1=3 2=1 3=1 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm14     1 1 conv_blob14 batch_norm_blob14 0=128
+Scale            bn_scale14       1 1 batch_norm_blob14 batch_norm_blob14_bn_scale14 0=128 1=1
+ReLU             relu14           1 1 batch_norm_blob14_bn_scale14 relu_blob14
+Convolution      conv15           1 1 relu_blob14 conv_blob15 0=128 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm15     1 1 conv_blob15 batch_norm_blob15 0=128
+Scale            bn_scale15       1 1 batch_norm_blob15 batch_norm_blob15_bn_scale15 0=128 1=1
+ReLU             relu15           1 1 batch_norm_blob15_bn_scale15 relu_blob15
+ConvolutionDepthWise conv16           1 1 relu_blob15 conv_blob16 0=128 1=3 2=1 3=1 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm16     1 1 conv_blob16 batch_norm_blob16 0=128
+Scale            bn_scale16       1 1 batch_norm_blob16 batch_norm_blob16_bn_scale16 0=128 1=1
+ReLU             relu16           1 1 batch_norm_blob16_bn_scale16 relu_blob16
+Convolution      conv17           1 1 relu_blob16 conv_blob17 0=128 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm17     1 1 conv_blob17 batch_norm_blob17 0=128
+Scale            bn_scale17       1 1 batch_norm_blob17 batch_norm_blob17_bn_scale17 0=128 1=1
+ReLU             relu17           1 1 batch_norm_blob17_bn_scale17 relu_blob17
+ConvolutionDepthWise conv18           1 1 relu_blob17 conv_blob18 0=128 1=3 2=1 3=1 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm18     1 1 conv_blob18 batch_norm_blob18 0=128
+Scale            bn_scale18       1 1 batch_norm_blob18 batch_norm_blob18_bn_scale18 0=128 1=1
+ReLU             relu18           1 1 batch_norm_blob18_bn_scale18 relu_blob18
+Convolution      conv19           1 1 relu_blob18 conv_blob19 0=128 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm19     1 1 conv_blob19 batch_norm_blob19 0=128
+Scale            bn_scale19       1 1 batch_norm_blob19 batch_norm_blob19_bn_scale19 0=128 1=1
+ReLU             relu19           1 1 batch_norm_blob19_bn_scale19 relu_blob19
+ConvolutionDepthWise conv20           1 1 relu_blob19 conv_blob20 0=128 1=3 2=1 3=1 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm20     1 1 conv_blob20 batch_norm_blob20 0=128
+Scale            bn_scale20       1 1 batch_norm_blob20 batch_norm_blob20_bn_scale20 0=128 1=1
+ReLU             relu20           1 1 batch_norm_blob20_bn_scale20 relu_blob20
+Convolution      conv21           1 1 relu_blob20 conv_blob21 0=128 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm21     1 1 conv_blob21 batch_norm_blob21 0=128
+Scale            bn_scale21       1 1 batch_norm_blob21 batch_norm_blob21_bn_scale21 0=128 1=1
+ReLU             relu21           1 1 batch_norm_blob21_bn_scale21 relu_blob21
+ConvolutionDepthWise conv22           1 1 relu_blob21 conv_blob22 0=128 1=3 2=1 3=1 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm22     1 1 conv_blob22 batch_norm_blob22 0=128
+Scale            bn_scale22       1 1 batch_norm_blob22 batch_norm_blob22_bn_scale22 0=128 1=1
+ReLU             relu22           1 1 batch_norm_blob22_bn_scale22 relu_blob22
+Convolution      conv23           1 1 relu_blob22 conv_blob23 0=128 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm23     1 1 conv_blob23 batch_norm_blob23 0=128
+Scale            bn_scale23       1 1 batch_norm_blob23 batch_norm_blob23_bn_scale23 0=128 1=1
+ReLU             relu23           1 1 batch_norm_blob23_bn_scale23 relu_blob23
+Split            splitncnn_2      1 2 relu_blob23 relu_blob23_splitncnn_0 relu_blob23_splitncnn_1
+ConvolutionDepthWise conv24           1 1 relu_blob23_splitncnn_1 conv_blob24 0=128 1=3 2=1 3=2 4=1 5=0 6=1152 7=128
+BatchNorm        batch_norm24     1 1 conv_blob24 batch_norm_blob24 0=128
+Scale            bn_scale24       1 1 batch_norm_blob24 batch_norm_blob24_bn_scale24 0=128 1=1
+ReLU             relu24           1 1 batch_norm_blob24_bn_scale24 relu_blob24
+Convolution      conv25           1 1 relu_blob24 conv_blob25 0=256 1=1 2=1 3=1 4=0 5=0 6=32768
+BatchNorm        batch_norm25     1 1 conv_blob25 batch_norm_blob25 0=256
+Scale            bn_scale25       1 1 batch_norm_blob25 batch_norm_blob25_bn_scale25 0=256 1=1
+ReLU             relu25           1 1 batch_norm_blob25_bn_scale25 relu_blob25
+ConvolutionDepthWise conv26           1 1 relu_blob25 conv_blob26 0=256 1=3 2=1 3=1 4=1 5=0 6=2304 7=256
+BatchNorm        batch_norm26     1 1 conv_blob26 batch_norm_blob26 0=256
+Scale            bn_scale26       1 1 batch_norm_blob26 batch_norm_blob26_bn_scale26 0=256 1=1
+ReLU             relu26           1 1 batch_norm_blob26_bn_scale26 relu_blob26
+Convolution      conv27           1 1 relu_blob26 conv_blob27 0=256 1=1 2=1 3=1 4=0 5=0 6=65536
+BatchNorm        batch_norm27     1 1 conv_blob27 batch_norm_blob27 0=256
+Scale            bn_scale27       1 1 batch_norm_blob27 batch_norm_blob27_bn_scale27 0=256 1=1
+ReLU             relu27           1 1 batch_norm_blob27_bn_scale27 relu_blob27
+Convolution      conv28           1 1 relu_blob11_splitncnn_0 conv_blob28 0=64 1=1 2=1 3=1 4=0 5=0 6=4096
+BatchNorm        batch_norm28     1 1 conv_blob28 batch_norm_blob28 0=64
+Scale            bn_scale28       1 1 batch_norm_blob28 batch_norm_blob28_bn_scale28 0=64 1=1
+ReLU             relu28           1 1 batch_norm_blob28_bn_scale28 relu_blob28
+Split            splitncnn_3      1 2 relu_blob28 relu_blob28_splitncnn_0 relu_blob28_splitncnn_1
+Convolution      conv29           1 1 relu_blob23_splitncnn_0 conv_blob29 0=64 1=1 2=1 3=1 4=0 5=0 6=8192
+BatchNorm        batch_norm29     1 1 conv_blob29 batch_norm_blob29 0=64
+Scale            bn_scale29       1 1 batch_norm_blob29 batch_norm_blob29_bn_scale29 0=64 1=1
+ReLU             relu29           1 1 batch_norm_blob29_bn_scale29 relu_blob29
+Split            splitncnn_4      1 2 relu_blob29 relu_blob29_splitncnn_0 relu_blob29_splitncnn_1
+Convolution      conv30           1 1 relu_blob27 conv_blob30 0=64 1=1 2=1 3=1 4=0 5=0 6=16384
+BatchNorm        batch_norm30     1 1 conv_blob30 batch_norm_blob30 0=64
+Scale            bn_scale30       1 1 batch_norm_blob30 batch_norm_blob30_bn_scale30 0=64 1=1
+ReLU             relu30           1 1 batch_norm_blob30_bn_scale30 relu_blob30
+Split            splitncnn_5      1 3 relu_blob30 relu_blob30_splitncnn_0 relu_blob30_splitncnn_1 relu_blob30_splitncnn_2
+Deconvolution    conv_transpose1  1 1 relu_blob30_splitncnn_2 conv_transpose_blob1 0=64 1=2 2=1 3=2 4=0 5=1 6=16384
+Crop             crop1            2 1 conv_transpose_blob1 relu_blob29_splitncnn_1 crop1
+Eltwise          add1             2 1 relu_blob29_splitncnn_0 crop1 add_blob1 0=1 -23301=0
+Convolution      conv31           1 1 add_blob1 conv_blob31 0=64 1=3 2=1 3=1 4=1 5=0 6=36864
+BatchNorm        batch_norm31     1 1 conv_blob31 batch_norm_blob31 0=64
+Scale            bn_scale31       1 1 batch_norm_blob31 batch_norm_blob31_bn_scale31 0=64 1=1
+ReLU             relu31           1 1 batch_norm_blob31_bn_scale31 relu_blob31
+Split            splitncnn_6      1 3 relu_blob31 relu_blob31_splitncnn_0 relu_blob31_splitncnn_1 relu_blob31_splitncnn_2
+Deconvolution    conv_transpose2  1 1 relu_blob31_splitncnn_2 conv_transpose_blob2 0=64 1=2 2=1 3=2 4=0 5=1 6=16384
+Crop             crop2            2 1 conv_transpose_blob2 relu_blob28_splitncnn_1 crop2
+Eltwise          add2             2 1 relu_blob28_splitncnn_0 crop2 add_blob2 0=1 -23301=0
+Convolution      conv32           1 1 add_blob2 conv_blob32 0=64 1=3 2=1 3=1 4=1 5=0 6=36864
+BatchNorm        batch_norm32     1 1 conv_blob32 batch_norm_blob32 0=64
+Scale            bn_scale32       1 1 batch_norm_blob32 batch_norm_blob32_bn_scale32 0=64 1=1
+ReLU             relu32           1 1 batch_norm_blob32_bn_scale32 relu_blob32
+Split            splitncnn_7      1 2 relu_blob32 relu_blob32_splitncnn_0 relu_blob32_splitncnn_1
+Convolution      conv33           1 1 relu_blob32_splitncnn_1 conv_blob33 0=32 1=3 2=1 3=1 4=1 5=0 6=18432
+BatchNorm        batch_norm33     1 1 conv_blob33 batch_norm_blob33 0=32
+Scale            bn_scale33       1 1 batch_norm_blob33 batch_norm_blob33_bn_scale33 0=32 1=1
+Convolution      conv34           1 1 relu_blob32_splitncnn_0 conv_blob34 0=16 1=3 2=1 3=1 4=1 5=0 6=9216
+BatchNorm        batch_norm34     1 1 conv_blob34 batch_norm_blob34 0=16
+Scale            bn_scale34       1 1 batch_norm_blob34 batch_norm_blob34_bn_scale34 0=16 1=1
+ReLU             relu33           1 1 batch_norm_blob34_bn_scale34 relu_blob33
+Split            splitncnn_8      1 2 relu_blob33 relu_blob33_splitncnn_0 relu_blob33_splitncnn_1
+Convolution      conv35           1 1 relu_blob33_splitncnn_1 conv_blob35 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm35     1 1 conv_blob35 batch_norm_blob35 0=16
+Scale            bn_scale35       1 1 batch_norm_blob35 batch_norm_blob35_bn_scale35 0=16 1=1
+Convolution      conv36           1 1 relu_blob33_splitncnn_0 conv_blob36 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm36     1 1 conv_blob36 batch_norm_blob36 0=16
+Scale            bn_scale36       1 1 batch_norm_blob36 batch_norm_blob36_bn_scale36 0=16 1=1
+ReLU             relu34           1 1 batch_norm_blob36_bn_scale36 relu_blob34
+Convolution      conv37           1 1 relu_blob34 conv_blob37 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm37     1 1 conv_blob37 batch_norm_blob37 0=16
+Scale            bn_scale37       1 1 batch_norm_blob37 batch_norm_blob37_bn_scale37 0=16 1=1
+Concat           cat1             3 1 batch_norm_blob33_bn_scale33 batch_norm_blob35_bn_scale35 batch_norm_blob37_bn_scale37 cat_blob1 0=0
+ReLU             relu35           1 1 cat_blob1 relu_blob35
+Split            splitncnn_9      1 3 relu_blob35 relu_blob35_splitncnn_0 relu_blob35_splitncnn_1 relu_blob35_splitncnn_2
+Convolution      conv38           1 1 relu_blob31_splitncnn_1 conv_blob38 0=32 1=3 2=1 3=1 4=1 5=0 6=18432
+BatchNorm        batch_norm38     1 1 conv_blob38 batch_norm_blob38 0=32
+Scale            bn_scale38       1 1 batch_norm_blob38 batch_norm_blob38_bn_scale38 0=32 1=1
+Convolution      conv39           1 1 relu_blob31_splitncnn_0 conv_blob39 0=16 1=3 2=1 3=1 4=1 5=0 6=9216
+BatchNorm        batch_norm39     1 1 conv_blob39 batch_norm_blob39 0=16
+Scale            bn_scale39       1 1 batch_norm_blob39 batch_norm_blob39_bn_scale39 0=16 1=1
+ReLU             relu36           1 1 batch_norm_blob39_bn_scale39 relu_blob36
+Split            splitncnn_10     1 2 relu_blob36 relu_blob36_splitncnn_0 relu_blob36_splitncnn_1
+Convolution      conv40           1 1 relu_blob36_splitncnn_1 conv_blob40 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm40     1 1 conv_blob40 batch_norm_blob40 0=16
+Scale            bn_scale40       1 1 batch_norm_blob40 batch_norm_blob40_bn_scale40 0=16 1=1
+Convolution      conv41           1 1 relu_blob36_splitncnn_0 conv_blob41 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm41     1 1 conv_blob41 batch_norm_blob41 0=16
+Scale            bn_scale41       1 1 batch_norm_blob41 batch_norm_blob41_bn_scale41 0=16 1=1
+ReLU             relu37           1 1 batch_norm_blob41_bn_scale41 relu_blob37
+Convolution      conv42           1 1 relu_blob37 conv_blob42 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm42     1 1 conv_blob42 batch_norm_blob42 0=16
+Scale            bn_scale42       1 1 batch_norm_blob42 batch_norm_blob42_bn_scale42 0=16 1=1
+Concat           cat2             3 1 batch_norm_blob38_bn_scale38 batch_norm_blob40_bn_scale40 batch_norm_blob42_bn_scale42 cat_blob2 0=0
+ReLU             relu38           1 1 cat_blob2 relu_blob38
+Split            splitncnn_11     1 3 relu_blob38 relu_blob38_splitncnn_0 relu_blob38_splitncnn_1 relu_blob38_splitncnn_2
+Convolution      conv43           1 1 relu_blob30_splitncnn_1 conv_blob43 0=32 1=3 2=1 3=1 4=1 5=0 6=18432
+BatchNorm        batch_norm43     1 1 conv_blob43 batch_norm_blob43 0=32
+Scale            bn_scale43       1 1 batch_norm_blob43 batch_norm_blob43_bn_scale43 0=32 1=1
+Convolution      conv44           1 1 relu_blob30_splitncnn_0 conv_blob44 0=16 1=3 2=1 3=1 4=1 5=0 6=9216
+BatchNorm        batch_norm44     1 1 conv_blob44 batch_norm_blob44 0=16
+Scale            bn_scale44       1 1 batch_norm_blob44 batch_norm_blob44_bn_scale44 0=16 1=1
+ReLU             relu39           1 1 batch_norm_blob44_bn_scale44 relu_blob39
+Split            splitncnn_12     1 2 relu_blob39 relu_blob39_splitncnn_0 relu_blob39_splitncnn_1
+Convolution      conv45           1 1 relu_blob39_splitncnn_1 conv_blob45 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm45     1 1 conv_blob45 batch_norm_blob45 0=16
+Scale            bn_scale45       1 1 batch_norm_blob45 batch_norm_blob45_bn_scale45 0=16 1=1
+Convolution      conv46           1 1 relu_blob39_splitncnn_0 conv_blob46 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm46     1 1 conv_blob46 batch_norm_blob46 0=16
+Scale            bn_scale46       1 1 batch_norm_blob46 batch_norm_blob46_bn_scale46 0=16 1=1
+ReLU             relu40           1 1 batch_norm_blob46_bn_scale46 relu_blob40
+Convolution      conv47           1 1 relu_blob40 conv_blob47 0=16 1=3 2=1 3=1 4=1 5=0 6=2304
+BatchNorm        batch_norm47     1 1 conv_blob47 batch_norm_blob47 0=16
+Scale            bn_scale47       1 1 batch_norm_blob47 batch_norm_blob47_bn_scale47 0=16 1=1
+Concat           cat3             3 1 batch_norm_blob43_bn_scale43 batch_norm_blob45_bn_scale45 batch_norm_blob47_bn_scale47 cat_blob3 0=0
+ReLU             relu41           1 1 cat_blob3 relu_blob41
+Split            splitncnn_13     1 3 relu_blob41 relu_blob41_splitncnn_0 relu_blob41_splitncnn_1 relu_blob41_splitncnn_2
+Convolution      conv48           1 1 relu_blob35_splitncnn_2 conv_blob48 0=8 1=1 2=1 3=1 4=0 5=1 6=512
+Convolution      conv49           1 1 relu_blob35_splitncnn_1 conv_blob49 0=4 1=1 2=1 3=1 4=0 5=1 6=256
+Convolution      conv50           1 1 relu_blob38_splitncnn_2 conv_blob50 0=8 1=1 2=1 3=1 4=0 5=1 6=512
+Convolution      conv51           1 1 relu_blob38_splitncnn_1 conv_blob51 0=4 1=1 2=1 3=1 4=0 5=1 6=256
+Convolution      conv52           1 1 relu_blob41_splitncnn_2 conv_blob52 0=8 1=1 2=1 3=1 4=0 5=1 6=512
+Convolution      conv53           1 1 relu_blob41_splitncnn_1 conv_blob53 0=4 1=1 2=1 3=1 4=0 5=1 6=256
+Permute          conv4_3_norm_mbox_loc_perm 1 1 conv_blob48 conv4_3_norm_mbox_loc_perm 0=3
+Flatten          conv4_3_norm_mbox_loc_flat 1 1 conv4_3_norm_mbox_loc_perm conv4_3_norm_mbox_loc_flat
+Permute          conv4_3_norm_mbox_conf_perm 1 1 conv_blob49 conv4_3_norm_mbox_conf_perm 0=3
+Flatten          conv4_3_norm_mbox_conf_flat 1 1 conv4_3_norm_mbox_conf_perm conv4_3_norm_mbox_conf_flat
+PriorBox         conv4_3_norm_mbox_priorbox 2 1 relu_blob35_splitncnn_0 data_splitncnn_2 conv4_3_norm_mbox_priorbox -23300=2,1.600000e+01,3.200000e+01 -23301=0 -23302=0 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=1 8=0 9=-233 10=-233 11=8.000000e+00 12=8.000000e+00 13=5.000000e-01
+Permute          conv5_3_norm_mbox_loc_perm 1 1 conv_blob50 conv5_3_norm_mbox_loc_perm 0=3
+Flatten          conv5_3_norm_mbox_loc_flat 1 1 conv5_3_norm_mbox_loc_perm conv5_3_norm_mbox_loc_flat
+Permute          conv5_3_norm_mbox_conf_perm 1 1 conv_blob51 conv5_3_norm_mbox_conf_perm 0=3
+Flatten          conv5_3_norm_mbox_conf_flat 1 1 conv5_3_norm_mbox_conf_perm conv5_3_norm_mbox_conf_flat
+PriorBox         conv5_3_norm_mbox_priorbox 2 1 relu_blob38_splitncnn_0 data_splitncnn_1 conv5_3_norm_mbox_priorbox -23300=2,6.400000e+01,1.280000e+02 -23301=0 -23302=0 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=1 8=0 9=-233 10=-233 11=1.600000e+01 12=1.600000e+01 13=5.000000e-01
+Permute          conv6_3_norm_mbox_loc_perm 1 1 conv_blob52 conv6_3_norm_mbox_loc_perm 0=3
+Flatten          conv6_3_norm_mbox_loc_flat 1 1 conv6_3_norm_mbox_loc_perm conv6_3_norm_mbox_loc_flat
+Permute          conv6_3_norm_mbox_conf_perm 1 1 conv_blob53 conv6_3_norm_mbox_conf_perm 0=3
+Flatten          conv6_3_norm_mbox_conf_flat 1 1 conv6_3_norm_mbox_conf_perm conv6_3_norm_mbox_conf_flat
+PriorBox         conv6_3_norm_mbox_priorbox 2 1 relu_blob41_splitncnn_0 data_splitncnn_0 conv6_3_norm_mbox_priorbox -23300=2,2.560000e+02,5.120000e+02 -23301=0 -23302=0 3=1.000000e-01 4=1.000000e-01 5=2.000000e-01 6=2.000000e-01 7=1 8=0 9=-233 10=-233 11=3.200000e+01 12=3.200000e+01 13=5.000000e-01
+Concat           mbox_loc         3 1 conv4_3_norm_mbox_loc_flat conv5_3_norm_mbox_loc_flat conv6_3_norm_mbox_loc_flat mbox_loc 0=0
+Concat           mbox_conf        3 1 conv4_3_norm_mbox_conf_flat conv5_3_norm_mbox_conf_flat conv6_3_norm_mbox_conf_flat mbox_conf 0=0
+Concat           mbox_priorbox    3 1 conv4_3_norm_mbox_priorbox conv5_3_norm_mbox_priorbox conv6_3_norm_mbox_priorbox mbox_priorbox 0=1
+Reshape          mbox_conf_reshape 1 1 mbox_conf mbox_conf_reshape 0=2 1=-1 2=-233 3=0
+Softmax          mbox_conf_softmax 1 1 mbox_conf_reshape mbox_conf_softmax 0=1 1=1
+Flatten          mbox_conf_flatten 1 1 mbox_conf_softmax mbox_conf_flatten
+DetectionOutput  detection_out    3 1 mbox_loc mbox_conf_flatten mbox_priorbox detection_out 0=2 1=3.000000e-01 2=400 3=200 4=1.000000e-01

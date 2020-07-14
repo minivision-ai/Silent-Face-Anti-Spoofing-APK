@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="result"
+            type="com.mv.livebodyexample.DetectionResult" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@+id/scan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="136dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginBottom="136dp"
+            android:visibility="@{result.hasFace ? View.GONE : View.VISIBLE}"
+            android:background="@drawable/scanning" />
+
+        <com.mv.livebodyexample.CoverView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:horizontalPadding="21dp"
+            app:verticalPadding="136dp"
+            app:backgroundColor="@color/cover_background"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/frame"
+            android:keepScreenOn="true"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="136dp"
+            android:layout_marginRight="21dp"
+            android:layout_marginBottom="136dp" />
+
+
+        <LinearLayout
+            android:layout_width="165dp"
+            android:layout_height="31dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/time_bg"
+            android:visibility="@{result.hasFace ? View.VISIBLE : View.GONE}"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/clock"
+                android:text='@{String.valueOf(result.time) + "ms"}'
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+        <com.mv.livebodyexample.RectView
+            android:id="@+id/rectView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lineLength="40dp"
+            app:radius="3dp"
+            app:textSize="15sp"
+            app:textPadding="6dp"
+            app:x1="@{result.left}"
+            app:x2="@{result.right}"
+            app:y1="@{result.top}"
+            app:y2="@{result.bottom}"
+            app:confidence="@{result.confidence}"
+            app:color="@{result.confidence >= result.threshold ? @color/real_face_color : @color/fake_face_color}" />
+
+        <LinearLayout
+            android:layout_width="142dp"
+            android:layout_height="43dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="72dp"
+            android:visibility="@{result.hasFace ? View.VISIBLE : View.GONE}"
+            android:background="@{result.confidence >= result.threshold ? @drawable/result_real_face_shape : @drawable/result_fake_face_shape}"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:drawableStart="@{result.confidence >= result.threshold ? @drawable/success_icon : @drawable/fail_icon}"
+                android:drawablePadding="20dp"
+                android:text='@{result.confidence >= result.threshold ? @string/real_face : @string/fake_face}'
+                android:textColor="@{result.confidence >= result.threshold ? @color/real_face_color : @color/fake_face_color}"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="163dp"
+            android:layout_height="14dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/logo" />
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/settings"
+            android:onClick="setting"/>
+
+    </RelativeLayout>
+</layout>
