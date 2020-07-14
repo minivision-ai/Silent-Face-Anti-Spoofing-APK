@@ -271,7 +271,7 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
 
     companion object {
         const val tag = "MainActivity"
-        const val defaultThreshold = 0.78F
+        const val defaultThreshold = 0.915F
 
         val permissions: Array<String> = arrayOf(Manifest.permission.CAMERA)
         const val permissionReqCode = 1

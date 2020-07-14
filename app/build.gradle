@@ -27,11 +27,11 @@ android {
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "0.1"
+        versionName "0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        project.archivesBaseName = "LiveBodyExample"
+        project.archivesBaseName = "Mini-FAS"
     }
 
     buildTypes {
