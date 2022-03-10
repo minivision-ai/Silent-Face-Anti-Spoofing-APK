@@ -106,14 +106,14 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="163dp"
-            android:layout_height="14dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/logo" />
+<!--        <View-->
+<!--            android:layout_width="163dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="12dp"-->
+<!--            android:layout_marginBottom="12dp"-->
+<!--            android:background="@drawable/logo" />-->
 
         <ImageButton
             android:layout_width="20dp"

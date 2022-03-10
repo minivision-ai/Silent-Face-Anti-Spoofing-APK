@@ -5,6 +5,7 @@ package com.mv.livebodyexample
 import android.Manifest
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.pm.PackageManager
 import android.graphics.ImageFormat
@@ -98,13 +99,8 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
         binding.surface.holder.let {
             it.setFormat(ImageFormat.NV21)
             it.addCallback(object : SurfaceHolder.Callback, Camera.PreviewCallback {
-                override fun surfaceChanged(
-                    holder: SurfaceHolder?,
-                    format: Int,
-                    width: Int,
-                    height: Int
-                ) {
-                    if (holder?.surface == null) return
+                override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
+                    if (holder.surface == null) return
 
                     if (camera == null) return
 
@@ -128,13 +124,13 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
                     setCameraDisplayOrientation()
                 }
 
-                override fun surfaceDestroyed(holder: SurfaceHolder?) {
+                override fun surfaceDestroyed(holder: SurfaceHolder) {
                     camera?.setPreviewCallback(null)
                     camera?.release()
                     camera = null
                 }
 
-                override fun surfaceCreated(holder: SurfaceHolder?) {
+                override fun surfaceCreated(holder: SurfaceHolder) {
                     try {
                         camera = Camera.open(cameraId)
                     } catch (e: Exception) {
@@ -238,6 +234,7 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
         threshold = t
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -247,7 +244,7 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 init()
             } else {
-                Toast.makeText(this, "请授权相机权限", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please authorize camera permission", Toast.LENGTH_LONG).show()
             }
         }
     }

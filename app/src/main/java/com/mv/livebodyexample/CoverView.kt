@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.ContextCompat
 
 class CoverView: View {
 
@@ -26,7 +27,8 @@ class CoverView: View {
 
         horizontalPadding = typedArray.getDimension(R.styleable.CoverView_horizontalPadding, 0F).toInt()
         verticalPadding = typedArray.getDimension(R.styleable.CoverView_verticalPadding, 0F).toInt()
-        backColor = typedArray.getColor(R.styleable.CoverView_backgroundColor, resources.getColor(R.color.colorAccent))
+//        backColor = typedArray.getColor(R.styleable.CoverView_backgroundColor, resources.getColor(R.color.colorAccent))
+        backColor = typedArray.getColor(R.styleable.CoverView_backgroundColor, ContextCompat.getColor(context, R.color.colorAccent))
 
         typedArray.recycle()
 
@@ -42,7 +44,8 @@ class CoverView: View {
     }
 
     override fun onDraw(canvas: Canvas?) {
-        val layerId = canvas?.saveLayer(0F, 0F, width.toFloat(), height.toFloat(), null, Canvas.ALL_SAVE_FLAG)
+//        val layerId = canvas?.saveLayer(0F, 0F, width.toFloat(), height.toFloat(), null, Canvas.ALL_SAVE_FLAG)
+        val layerId = canvas?.saveLayer(0F, 0F, width.toFloat(), height.toFloat(), null)
 
         canvas?.drawRect(0F, 0F, width.toFloat(), height.toFloat(), paint)
 
