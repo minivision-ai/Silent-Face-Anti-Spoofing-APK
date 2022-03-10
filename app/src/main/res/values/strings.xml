@@ -2,7 +2,7 @@
     <string name="app_name">Mini-FAS</string>
     <string name="real_face">Real</string>
     <string name="fake_face">Fake</string>
-    <string name="set_threshold_dialog_title">Cài đặt Threshold</string>
+    <string name="set_threshold_dialog_title">Threshold Setting</string>
     <string name="set_threshold_dialog_text_hint">Threshold: 0–1, recommended: 0.915</string>
     <string name="set_threshold_dialog_confirm">Confirm</string>
     <string name="set_threshold_dialog_hint">Enter threshold</string>
