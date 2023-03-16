@@ -97,9 +97,11 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
 
         binding.surface.holder.let {
             it.setFormat(ImageFormat.NV21)
+
+
             it.addCallback(object : SurfaceHolder.Callback, Camera.PreviewCallback {
                 override fun surfaceChanged(
-                    holder: SurfaceHolder?,
+                    holder: SurfaceHolder,
                     format: Int,
                     width: Int,
                     height: Int
@@ -126,15 +128,16 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
                     camera?.setPreviewCallback(this)
 
                     setCameraDisplayOrientation()
+
                 }
 
-                override fun surfaceDestroyed(holder: SurfaceHolder?) {
+                override fun surfaceDestroyed(holder: SurfaceHolder) {
                     camera?.setPreviewCallback(null)
                     camera?.release()
                     camera = null
                 }
 
-                override fun surfaceCreated(holder: SurfaceHolder?) {
+                override fun surfaceCreated(holder: SurfaceHolder) {
                     try {
                         camera = Camera.open(cameraId)
                     } catch (e: Exception) {
@@ -243,6 +246,7 @@ class MainActivity : AppCompatActivity(), SetThresholdDialogFragment.ThresholdDi
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == permissionReqCode) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 init()
