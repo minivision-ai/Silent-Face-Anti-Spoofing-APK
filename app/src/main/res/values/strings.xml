@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Mini-FAS</string>
 
-    <string name="real_face">真脸</string>
-    <string name="fake_face">假脸</string>
-    <string name="set_threshold_dialog_title">阈值设置</string>
-    <string name="set_threshold_dialog_text_hint">阈值范围0–1,推荐阈值0.915</string>
-    <string name="set_threshold_dialog_confirm">确定</string>
-    <string name="set_threshold_dialog_hint">请输入阈值</string>
+    <string name="real_face">Real Face</string>
+    <string name="fake_face">Fake Face</string>
+    <string name="set_threshold_dialog_title">Threshold Settings</string>
+    <string name="set_threshold_dialog_text_hint">Threshold range 0–1, recommended 0.915</string>
+    <string name="set_threshold_dialog_confirm">OK</string>
+    <string name="set_threshold_dialog_hint">Please enter a threshold</string>
 </resources>

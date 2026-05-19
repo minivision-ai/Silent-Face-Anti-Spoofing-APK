@@ -53,14 +53,18 @@ android {
         }
     }
 
+    packagingOptions {
+        pickFirst 'lib/**/*.so'
+    }
+
     applicationVariants.all { variant ->
         variant.outputs.all {
             outputFileName = "${archivesBaseName}_${defaultConfig.versionName}_${variant.buildType.name}.apk"
         }
     }
 
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding true
     }
 
 }
@@ -78,5 +82,5 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0'
 
-    kapt "com.android.databinding:compiler:"
+    // kapt "com.android.databinding:compiler:"
 }
