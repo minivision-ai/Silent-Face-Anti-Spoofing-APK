@@ -38,6 +38,10 @@ android {
         }
     }
 
+    packagingOptions {
+        pickFirst 'lib/**/*.so'
+    }
+
 }
 
 dependencies {

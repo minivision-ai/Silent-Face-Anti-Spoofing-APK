@@ -115,6 +115,19 @@
             android:layout_marginBottom="12dp"
             android:background="@drawable/logo" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="Switch Camera"
+            android:textColor="#ffffff"
+            android:background="#88000000"
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:onClick="switchCamera"/>
+
         <ImageButton
             android:layout_width="20dp"
             android:layout_height="18dp"
